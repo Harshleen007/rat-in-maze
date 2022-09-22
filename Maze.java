@@ -9,12 +9,10 @@ public class Maze
 	                    " " + sol[i][j] + " ");
 	            System.out.println();
 	        }
-	    }
-	 
+	    }	 
 	    boolean isSafe(
 	        int maze[][], int x, int y)
 	    {
-	        // if (x, y outside maze) return false
 	        return (x >= 0 && x < N && y >= 0
 	                && y < N && maze[x][y] == 1);
 	    }
@@ -27,23 +25,17 @@ public class Maze
 	            System.out.print("Solution doesn't exist");
 	            return false;
 	        }
-	 
 	        printSolution(sol);
 	        return true;
 	    }
-	 
-	    
 	    boolean solveMazeUtil(int maze[][], int x, int y,
 	                          int sol[][])
 	    {
-	        // if (x, y is goal) return true
 	        if (x == N - 1 && y == N - 1
 	            && maze[x][y] == 1) {
 	            sol[x][y] = 1;
 	            return true;
 	        }
-	 
-	       
 	        if (isSafe(maze, x, y) == true) {
 	                
 	              if (sol[x][y] == 1)
